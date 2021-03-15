@@ -12,6 +12,14 @@ export class CategoriesRepository {
     this.categories = [];
   }
 
+  async all(): Promise<Category[]> {
+    return this.categories;
+  }
+
+  async findByName(name: string): Promise<Category | undefined> {
+    return this.categories.find((category) => category.name === name);
+  }
+
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = new Category();
 
@@ -22,9 +30,5 @@ export class CategoriesRepository {
     });
 
     this.categories.push(category);
-  }
-
-  async all(): Promise<Category[]> {
-    return this.categories;
   }
 }
