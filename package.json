@@ -6,7 +6,7 @@
   "author": "Lucas Prazeres <olucascostadp@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd src/index.ts --ignore-watch node_modules --transpileOnly"
+    "dev": "tsnd src/index.ts --ignore-watch node_modules --transpile-only --respawn"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
