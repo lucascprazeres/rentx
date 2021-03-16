@@ -1,14 +1,12 @@
-import { CategoriesRepository } from "../repositories/CategoriesRepository";
-
-interface IRequest {
-  name: string;
-  description: string;
-}
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from "../repositories/ICategoriesRepository";
 
 export class CreateCategorieService {
-  constructor(private categoriesRepository: CategoriesRepository) {}
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
-  async execute({ name, description }: IRequest): Promise<void> {
+  async execute({ name, description }: ICreateCategoryDTO): Promise<void> {
     const foundCategory = await this.categoriesRepository.findByName(name);
 
     if (foundCategory) {
