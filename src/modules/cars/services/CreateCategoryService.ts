@@ -3,7 +3,7 @@ import {
   ICreateCategoryDTO,
 } from "../repositories/ICategoriesRepository";
 
-export class CreateCategorieService {
+export class CreateCategoryService {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
   async execute({ name, description }: ICreateCategoryDTO): Promise<void> {
