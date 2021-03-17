@@ -1,9 +1,9 @@
 import {
-  ISpecificationsRepository,
   ICreateSpecificationDTO,
-} from "../repositories/ISpecificationsRepository";
+  ISpecificationsRepository,
+} from "../../repositories/ISpecificationsRepository";
 
-export class CreateSpecificationService {
+export class CreateSpecificationUseCase {
   constructor(private specificationsRepository: ISpecificationsRepository) {}
 
   async execute({ name, description }: ICreateSpecificationDTO): Promise<void> {
