@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 import { CategoriesRepository } from "../modules/cars/repositories/CategoriesRepository";
-import { CreateCategorieService } from "../modules/cars/services/CreateCategoriesService";
+import { CreateCategoryService } from "../modules/cars/services/CreateCategoryService";
 
 const categoriesRoutes = Router();
 const categoriesRepository = new CategoriesRepository();
@@ -16,7 +16,7 @@ categoriesRoutes.post("/", async (request, response) => {
   try {
     const { name, description } = request.body;
 
-    const createCategory = new CreateCategorieService(categoriesRepository);
+    const createCategory = new CreateCategoryService(categoriesRepository);
 
     await createCategory.execute({ name, description });
 
