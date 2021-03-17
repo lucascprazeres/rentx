@@ -13,7 +13,6 @@ export class CreateCategoryController {
 
       return response.status(201).send();
     } catch (error) {
-      console.log(error);
       return response.status(400).json({ error: error.message });
     }
   }
