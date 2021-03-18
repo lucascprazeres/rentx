@@ -2,3 +2,5 @@
 node_modules
 # ide settings
 .vscode
+#uploaded files
+tmp/*
