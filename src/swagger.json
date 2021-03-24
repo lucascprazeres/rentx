@@ -9,10 +9,39 @@
     }
   },
   "paths": {
+    "/categories/import": {
+      "post": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Import categories",
+        "description": "Import categories from a csv file.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resources created sucessfully."
+          }
+        }
+      }
+    },
     "/categories": {
       "post": {
         "tags": [
-          "Category"
+          "categories"
         ],
         "summary": "Create category",
         "description": "Creates a new category",
@@ -39,23 +68,23 @@
         },
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Resource created sucessfully."
           },
           "400": {
-            "description": "Category already exists"
+            "description": "Category already exists."
           }
         }
       },
       "get": {
         "tags": [
-          "Category"
+          "categories"
         ],
         "summary": "List all categories",
         "description": "List all categories",
         "responses": {
           "200": {
-            "description": "Success",
-            "content":  {
+            "description": "Resources returned sucessfully.",
+            "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -73,6 +102,44 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": [
+          "specifications"
+        ],
+        "summary": "Create specification",
+        "description": "creates a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "Air conditionator",
+                "description": "AC integrated"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Resource created sucessfully."
+          },
+          "400": {
+            "description": "Specification already exists."
           }
         }
       }
