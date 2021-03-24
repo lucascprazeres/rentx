@@ -1,0 +1,148 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RentalX API",
+    "description": "This is a car rent API",
+    "version": "1.0.0",
+    "contact": {
+      "email": "olucascostadp@gmail.com"
+    }
+  },
+  "paths": {
+    "/categories/import": {
+      "post": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Import categories",
+        "description": "Import categories from a csv file.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resources created sucessfully."
+          }
+        }
+      }
+    },
+    "/categories": {
+      "post": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Create category",
+        "description": "Creates a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "SUV",
+                  "description": "this is a SUV"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Resource created sucessfully."
+          },
+          "400": {
+            "description": "Category already exists."
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "List all categories",
+        "description": "List all categories",
+        "responses": {
+          "200": {
+            "description": "Resources returned sucessfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": [
+          "specifications"
+        ],
+        "summary": "Create specification",
+        "description": "creates a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "Air conditionator",
+                "description": "AC integrated"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Resource created sucessfully."
+          },
+          "400": {
+            "description": "Specification already exists."
+          }
+        }
+      }
+    }
+  }
+}
