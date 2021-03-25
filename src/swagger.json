@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "RentalX API",
+    "title": "RentX API",
     "description": "This is a car rent API",
     "version": "1.0.0",
     "contact": {
