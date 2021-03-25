@@ -1,6 +1,6 @@
 <div align=center><img src=".github/logo.png"/></div>
 <br/>
-<h3 align=center>A nodejs sports car renting REST API 🔥</h3>
+<h3 align=center>A nodejs sports car rent API 🔥</h3>
 
 <div align=center>
 <a href="#About-the-project">about</a> |
@@ -14,7 +14,7 @@
 
 ## About the project
 
-RentX is a nodejs REST API developed on a back-end bootcamp called [Ignite](). It is platform for renting sports cars which allows you to manage your vehicles, it's features and, of couse, their rents!
+RentX is a nodejs REST API developed on a back-end bootcamp called [Ignite](https://pages.rocketseat.com.br/ignite). It is platform for renting sports cars which allows you to manage your vehicles, it's features and, of couse, their rents!
 
 Since it's an Open source project, feel free to make your contributions to help make this application a really nice thing :)
 
