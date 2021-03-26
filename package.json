@@ -6,7 +6,8 @@
   "author": "Lucas Prazeres",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --inspect --ignore-watch node_modules --transpile-only --respawn src/index.ts"
+    "dev": "tsnd --inspect --ignore-watch node_modules --transpile-only --respawn src/index.ts",
+    "typeorm": "tsnd ./node_modules/typeorm/cli"    
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
