@@ -49,19 +49,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "name": "SUV",
-                  "description": "this is a SUV"
-                }
+                "$ref": "#/definitions/Category"
+              },
+              "example": {
+                "name": "SUV",
+                "description": "this is a SUV"
               }
             }
           }
@@ -117,15 +109,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/definitions/Specification"
               },
               "example": {
                 "name": "Air conditionator",
@@ -141,6 +125,30 @@
           "400": {
             "description": "Specification already exists."
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
         }
       }
     }
