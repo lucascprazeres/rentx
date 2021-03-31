@@ -4,3 +4,5 @@ node_modules
 .vscode
 #uploaded files
 tmp/*
+#env variables
+.env
