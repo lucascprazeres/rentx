@@ -8,10 +8,8 @@ export class CreateSpecificationController {
     try {
       const { name, description } = request.body;
 
-      const createSpecificationUseCase = container.resolve(
-        CreateSpecificationUseCase
-      );
-      await createSpecificationUseCase.execute({ name, description });
+      const createSpecification = container.resolve(CreateSpecificationUseCase);
+      await createSpecification.execute({ name, description });
 
       return response.status(201).send();
     } catch (error) {
