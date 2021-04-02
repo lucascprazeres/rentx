@@ -67,7 +67,7 @@ git push origin <your-branch-name>
 
 **the last step is to create a pull request here on github**
 
-*ps: if you're not familiar with the commit message structure above, please check [this]()*
+*ps: if you're not familiar with the commit message structure above, please check [this](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)*
 
 ## Documentation
 
