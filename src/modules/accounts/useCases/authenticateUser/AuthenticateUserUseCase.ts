@@ -30,9 +30,9 @@ export class AuthenticateUserUseCase {
 
     const { id, password: storedPassword } = foundUserByEmail;
 
-    const passowordsMatch = await compare(password, storedPassword);
+    const passwordsMatch = await compare(password, storedPassword);
 
-    if (!passowordsMatch) {
+    if (!passwordsMatch) {
       throw new AppError("Email or password incorrect for this user");
     }
 
