@@ -1,10 +1,10 @@
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "../../../../errors/AppError";
+import { AppError } from "@errors/AppError";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../../repositories/ICategoriesRepository";
+} from "@modules/cars/repositories/ICategoriesRepository";
 
 @injectable()
 export class CreateCategoryUseCase {

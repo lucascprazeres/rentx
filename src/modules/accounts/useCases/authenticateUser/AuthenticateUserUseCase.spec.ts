@@ -1,5 +1,6 @@
-import { AppError } from "../../../../errors/AppError";
-import { UsersRepositoryMock } from "../../repositories/mocks/UsersRepositoryMock";
+import { AppError } from "@errors/AppError";
+import { UsersRepositoryMock } from "@modules/accounts/repositories/mocks/UsersRepositoryMock";
+
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
