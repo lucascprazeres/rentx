@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { deleteFile } from "../../../../utils/file";
+import { deleteFile } from "@utils/file";
+
 import { IUpdateUserAvatarDTO } from "../../dtos/IUpdateUserAvatarDTO";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
