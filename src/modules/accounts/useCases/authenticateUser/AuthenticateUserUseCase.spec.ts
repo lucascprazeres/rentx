@@ -1,5 +1,5 @@
-import { AppError } from "@errors/AppError";
 import { UsersRepositoryMock } from "@modules/accounts/repositories/mocks/UsersRepositoryMock";
+import { AppError } from "@shared/errors/AppError";
 
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";

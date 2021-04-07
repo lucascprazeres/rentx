@@ -1,5 +1,5 @@
-import { AppError } from "@errors/AppError";
 import { CategoriesRepositoryMock } from "@modules/cars/repositories/mocks/CategoriesRepositoryMock";
+import { AppError } from "@shared/errors/AppError";
 
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
