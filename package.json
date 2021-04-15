@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "tsnd -r tsconfig-paths/register --inspect --ignore-watch node_modules --transpile-only --respawn src/shared/infra/http/server.ts",
     "typeorm": "tsnd -r tsconfig-paths/register ./node_modules/typeorm/cli",
-    "test": "jest"
+    "test": "jest",
+    "seed:admin": "ts-node-dev src/shared/infra/typeorm/seeds/admin.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

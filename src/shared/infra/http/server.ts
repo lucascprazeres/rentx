@@ -6,13 +6,14 @@ import * as swaggerUi from "swagger-ui-express";
 import { globalErrorHandler } from "@shared/infra/http/middlewares/globalErrorHandler";
 
 import * as swaggerDocs from "../../../swagger.json";
+import createConnection from "../typeorm/connection";
 import { router } from "./routes";
-
-import "../typeorm/connection";
 
 import "@shared/container";
 
 import "dotenv/config";
+
+createConnection();
 
 const app = express();
 
