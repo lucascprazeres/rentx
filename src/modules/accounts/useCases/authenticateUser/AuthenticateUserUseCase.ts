@@ -2,9 +2,9 @@ import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "../../../../errors/AppError";
-import { IAuthenticateUserDTO } from "../../dtos/IAuthenticateUserDTO";
-import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { IAuthenticateUserDTO } from "@modules/accounts/dtos/IAuthenticateUserDTO";
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { AppError } from "@shared/errors/AppError";
 
 interface IResponse {
   user: {
@@ -30,9 +30,9 @@ export class AuthenticateUserUseCase {
 
     const { id, password: storedPassword } = foundUserByEmail;
 
-    const passowordsMatch = await compare(password, storedPassword);
+    const passwordsMatch = await compare(password, storedPassword);
 
-    if (!passowordsMatch) {
+    if (!passwordsMatch) {
       throw new AppError("Email or password incorrect for this user");
     }
 
