@@ -10,6 +10,10 @@ class CarsRepositoryMock implements ICarsRepository {
     this.cars = [];
   }
 
+  async findById(id: string): Promise<Car> {
+    return this.cars.find((car) => car.id === id);
+  }
+
   async findAvailableOnes(
     brand?: string,
     category_id?: string,
@@ -33,6 +37,7 @@ class CarsRepositoryMock implements ICarsRepository {
   }
 
   async create({
+    id,
     name,
     description,
     daily_rate,
@@ -40,10 +45,11 @@ class CarsRepositoryMock implements ICarsRepository {
     fine_amount,
     brand,
     category_id,
+    specifications,
   }: ICreateCarDTO): Promise<Car> {
     const car = new Car();
 
-    Object.assign(car, {
+    const params = {
       name,
       description,
       daily_rate,
@@ -51,7 +57,14 @@ class CarsRepositoryMock implements ICarsRepository {
       fine_amount,
       brand,
       category_id,
-    });
+      specifications,
+    } as ICreateCarDTO;
+
+    if (id) {
+      params.id = id;
+    }
+
+    Object.assign(car, params);
 
     this.cars.push(car);
 
