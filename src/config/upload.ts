@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import * as crypto from "crypto";
 import * as multer from "multer";
 import { resolve } from "path";
 
