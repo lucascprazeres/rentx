@@ -3,7 +3,7 @@ import * as dayjs from "dayjs";
 import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider";
 import { AppError } from "@shared/errors/AppError";
 
-import { RentalsRepositoryMock } from "../repositories/mocks/RentalsRepositoryMock";
+import { RentalsRepositoryMock } from "../../repositories/mocks/RentalsRepositoryMock";
 import { CreateRentalUseCase } from "./CreateRentalUseCase";
 
 let rentalsRepository: RentalsRepositoryMock;
