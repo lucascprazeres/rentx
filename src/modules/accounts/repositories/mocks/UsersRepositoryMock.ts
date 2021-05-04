@@ -23,6 +23,9 @@ export class UsersRepositoryMock implements IUsersRepository {
       email,
       password,
       driver_license,
+      created_at: new Date(),
+      avatar: null,
+      admin: false,
     });
 
     this.users.push(user);
@@ -32,5 +35,8 @@ export class UsersRepositoryMock implements IUsersRepository {
   }
   async findById(id: string): Promise<User> {
     return this.users.find((user) => user.id === id);
+  }
+  async findByDriverLicense(driver_license: string): Promise<User> {
+    return this.users.find((user) => user.driver_license === driver_license);
   }
 }
