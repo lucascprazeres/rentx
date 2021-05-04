@@ -24,6 +24,14 @@ export class CreateUserUseCase {
       throw new AppError("Email is already in use.");
     }
 
+    const foundUserByDriverLicense = await this.usersRepository.findByDriverLicense(
+      driver_license
+    );
+
+    if (foundUserByDriverLicense) {
+      throw new AppError("Driver license is already in use.");
+    }
+
     const passwordHash = await hash(password, 8);
 
     await this.usersRepository.create({

@@ -20,6 +20,10 @@ export class UsersRepository implements IUsersRepository {
     return this.repository.findOne(id);
   }
 
+  async findByDriverLicense(driver_license: string): Promise<User> {
+    return this.repository.findOne({ driver_license });
+  }
+
   async create({
     id,
     avatar,
