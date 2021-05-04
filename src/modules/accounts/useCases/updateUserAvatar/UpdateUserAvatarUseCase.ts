@@ -1,6 +1,5 @@
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "@shared/errors/AppError";
 import { deleteFile } from "@utils/file";
 
 import { IUpdateUserAvatarDTO } from "../../dtos/IUpdateUserAvatarDTO";

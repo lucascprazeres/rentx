@@ -1,3 +1,5 @@
+import { v4 as uuidV4 } from "uuid";
+
 import { UsersRepositoryMock } from "@modules/accounts/repositories/mocks/UsersRepositoryMock";
 import { AppError } from "@shared/errors/AppError";
 
@@ -30,14 +32,5 @@ describe("CreateUserUseCase", () => {
     const user = await usersRepository.findByDriverLicense("1111");
 
     expect(user.avatar).toBe("file.png");
-  });
-
-  it("should not be able to update a non-existent users avatar", async () => {
-    await expect(
-      updateUserAvatar.execute({
-        user_id: "fake_id",
-        avatar_file: "file.png",
-      })
-    ).rejects.toBeInstanceOf(AppError);
   });
 });
