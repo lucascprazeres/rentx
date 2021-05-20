@@ -13,13 +13,19 @@ export class RentalsRepository implements IRentalsRepository {
   }
 
   async create({
+    id,
+    end_date,
     user_id,
     car_id,
+    total,
     expected_return_date,
   }: ICreateRentalDTO): Promise<Rental> {
     const rental = this.repository.create({
+      id,
+      end_date,
       user_id,
       car_id,
+      total,
       expected_return_date,
     });
 
@@ -46,5 +52,8 @@ export class RentalsRepository implements IRentalsRepository {
         },
       ],
     });
+  }
+  async findById(id: string): Promise<Rental> {
+    return this.repository.findOne(id);
   }
 }
