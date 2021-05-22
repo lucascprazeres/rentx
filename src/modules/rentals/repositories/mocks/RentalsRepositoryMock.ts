@@ -40,4 +40,10 @@ export class RentalsRepositoryMock implements IRentalsRepository {
       (rental) => rental.user_id === id && !rental.end_date
     );
   }
+  async findAllByUserId(id: string): Promise<Rental[]> {
+    return this.rentals.filter((rental) => rental.user_id === id);
+  }
+  async findById(id: string): Promise<Rental> {
+    return this.rentals.find((rental) => rental.id === id);
+  }
 }

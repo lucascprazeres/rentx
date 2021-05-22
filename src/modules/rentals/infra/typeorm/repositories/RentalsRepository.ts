@@ -53,6 +53,13 @@ export class RentalsRepository implements IRentalsRepository {
       ],
     });
   }
+  async findAllByUserId(id: string): Promise<Rental[]> {
+    return this.repository.find({
+      where: {
+        user_id: id,
+      },
+    });
+  }
   async findById(id: string): Promise<Rental> {
     return this.repository.findOne(id);
   }
