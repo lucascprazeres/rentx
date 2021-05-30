@@ -44,8 +44,6 @@ export class AuthenticateUserUseCase {
       throw new AppError("Email or password incorrect for this user");
     }
 
-    console.dir(authConfig);
-
     const token = sign({}, authConfig.jwt.secret, {
       subject: user_id,
       expiresIn: authConfig.jwt.expiresIn,
