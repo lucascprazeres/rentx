@@ -3,4 +3,5 @@ export interface IDateProvider {
   parseToUTC(date: Date): string;
   dateNow(): Date;
   getDiffInDays(start_date: Date, end_date: Date): number;
+  getTimestampFromDayCount(days: number): Date;
 }
