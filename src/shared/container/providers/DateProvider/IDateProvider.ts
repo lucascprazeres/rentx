@@ -4,4 +4,6 @@ export interface IDateProvider {
   dateNow(): Date;
   getDiffInDays(start_date: Date, end_date: Date): number;
   getTimestampFromDayCount(days: number): Date;
+  getTimestampFromHourCount(hours: number): Date;
+  checkIfFirstDateIsBefore(start_date: Date, end_date: Date): boolean;
 }
