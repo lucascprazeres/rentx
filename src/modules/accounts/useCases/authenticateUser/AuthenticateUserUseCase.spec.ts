@@ -1,18 +1,28 @@
 import { UsersRepositoryMock } from "@modules/accounts/repositories/mocks/UsersRepositoryMock";
+import { UserTokensRepositoryMock } from "@modules/accounts/repositories/mocks/UserTokensRepositoryMock";
+import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider";
 import { AppError } from "@shared/errors/AppError";
 
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
 let usersRepository: UsersRepositoryMock;
+let userTokensRepository: UserTokensRepositoryMock;
+let dateProvider: DayjsDateProvider;
 let createUser: CreateUserUseCase;
 let authenticateUser: AuthenticateUserUseCase;
 
 describe("AuthenticateUserUseCase", () => {
   beforeEach(() => {
     usersRepository = new UsersRepositoryMock();
+    userTokensRepository = new UserTokensRepositoryMock();
+    dateProvider = new DayjsDateProvider();
     createUser = new CreateUserUseCase(usersRepository);
-    authenticateUser = new AuthenticateUserUseCase(usersRepository);
+    authenticateUser = new AuthenticateUserUseCase(
+      usersRepository,
+      userTokensRepository,
+      dateProvider
+    );
   });
 
   it("should be able to authenticate a user", async () => {

@@ -53,7 +53,7 @@ describe("CreateRentalController", () => {
       password: "12345",
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post("/rentals")
@@ -62,7 +62,7 @@ describe("CreateRentalController", () => {
         expected_return_date: dayjs().add(1, "day").toDate(),
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(201);
@@ -80,7 +80,7 @@ describe("CreateRentalController", () => {
       password: "12345",
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post("/rentals")
@@ -89,7 +89,7 @@ describe("CreateRentalController", () => {
         expected_return_date: dayjs().add(1, "day").toDate(),
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(400);
@@ -101,7 +101,7 @@ describe("CreateRentalController", () => {
       password: "12345",
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post("/rentals")
@@ -110,7 +110,7 @@ describe("CreateRentalController", () => {
         expected_return_date: dayjs().add(1, "day").toDate(),
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(400);
@@ -122,7 +122,7 @@ describe("CreateRentalController", () => {
       password: "12345",
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post("/rentals")
@@ -131,7 +131,7 @@ describe("CreateRentalController", () => {
         expected_return_date: dayjs().toDate(),
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(400);

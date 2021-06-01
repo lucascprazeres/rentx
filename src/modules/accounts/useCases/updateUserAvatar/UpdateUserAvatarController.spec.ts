@@ -1,5 +1,4 @@
 import { hash } from "bcryptjs";
-import * as fs from "fs";
 import * as request from "supertest";
 import { Connection } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
@@ -37,14 +36,14 @@ describe("CreateUserController", () => {
       password: "12345",
     });
 
-    const { token } = authResponse.body;
+    const { refresh_token } = authResponse.body;
 
     const mockFile = Buffer.from("this is the file");
 
     const response = await request(app)
       .patch("/users/avatar")
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       })
       .attach("avatar", mockFile, "rentxtestmock.jpg");
 
@@ -57,7 +56,7 @@ describe("CreateUserController", () => {
       password: "12345",
     });
 
-    const { token } = authResponse.body;
+    const { refresh_token } = authResponse.body;
 
     await connection.query("DELETE FROM users WHERE email = 'teste@email.com'");
 
@@ -66,7 +65,7 @@ describe("CreateUserController", () => {
     const response = await request(app)
       .patch("/users/avatar")
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       })
       .attach("avatar", mockFile, "rentxtestmock.jpg");
 
