@@ -7,6 +7,7 @@ import { globalErrorHandler } from "@shared/infra/http/middlewares/globalErrorHa
 
 import * as swaggerDocs from "../../../swagger.json";
 import createConnection from "../typeorm/connection";
+import rateLimiter from "./middlewares/rateLimiter";
 import { router } from "./routes";
 
 import "@shared/container";
@@ -17,6 +18,7 @@ createConnection();
 
 const app = express();
 
+app.use(rateLimiter);
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(router);
