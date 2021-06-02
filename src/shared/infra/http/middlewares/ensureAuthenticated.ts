@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from "express";
 import { verify } from "jsonwebtoken";
 
 import auth from "@config/auth";
-import { UserTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UserTokensRepository";
 import { AppError } from "@shared/errors/AppError";
 
 interface IPayload {
